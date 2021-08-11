@@ -1,0 +1,11 @@
+import uk.gov.hmcts.reform.pip.example.model.PublicationRequest;
+global uk.gov.hmcts.reform.pip.example.model.CourtList courtList;
+dialect  "mvel"
+
+rule "Generate the court list"
+    when
+        publicationRequest: PublicationRequest(publicationId == 1);
+    then
+      	courtList.setCourtName("Court A");
+       	courtList.setNumberOfHearings(2);
+end

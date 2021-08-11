@@ -1,0 +1,12 @@
+import uk.gov.hmcts.reform.pip.example.model.PublicationRequest;
+import uk.gov.hmcts.reform.pip.example.service.CourtListService
+global uk.gov.hmcts.reform.pip.example.model.CourtList courtList;
+dialect  "mvel"
+
+rule "Log out status every 5 seconds"
+    timer(cron:*/30 * * * * ?)
+    when
+        courtListService: CourtListService(online==true)
+    then
+      	System.out.println(courtListService.isOnline());
+end

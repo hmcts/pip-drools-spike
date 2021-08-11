@@ -12,6 +12,7 @@ plugins {
 
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
+def droolsVersion = '7.58.0.Final'
 
 allprojects {
   sourceCompatibility = '11'
@@ -182,6 +183,9 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
+  implementation "org.drools:drools-decisiontables:${droolsVersion}"
+  implementation 'org.drools:drools-core:7.58.0.Final'
+  implementation 'org.kie:kie-spring:7.58.0.Final'
 
   implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
